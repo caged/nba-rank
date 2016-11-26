@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#vis {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+.stats {
+  width: 100%;
+  border: 1px solid #eee;
+  border-collapse: collapse;
+}
+
+.stats th,
+.stats td {
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+.stats th {
+  background: #f7f7f7;
+}
+
+.stats td {
+  text-align: center;
+}
+
+.stats tbody td:nth-child(1) {
+  background: #f1f1f1;
+  font-weight: bold;
+  border-bottom: 1px solid #e1e1e1;
+  text-align: right;
+}
+
+.stats tbody tr:hover td {
+  background: #9AE1FF;
+  border-color: #92D9FC;
+}

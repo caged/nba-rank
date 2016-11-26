@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+const fs = require('fs')
+const csvparse = require('csv-parse/lib/sync')
+const csvwrite = require('csv-stringify')
+
+// The files we're parsing
+const files = [
+  { name: 'Traditional', file: 'data/team-base.csv' },
+  { name: 'Advanced', file: 'data/team-advanced.csv' },
+  { name: 'Four Factors', file: 'data/team-four-factors.csv' },
+  { name: 'Misc', file: 'data/team-misc.csv' },
+  { name: 'Scoring', file: 'data/team-scoring.csv' },
+  { name: 'Defense', file: 'data/team-defense.csv' },
+  { name: 'Defense', file: 'data/team-opponent.csv' }
+]
+
+// Ignore some junk or duplicate columns
+const ignores = ['TEAM_ID', 'TEAM_NAME', 'CFPARAMS', 'CFID', 'W_RANK', 'L_RANK', 'MIN_RANK', 'GP_RANK', 'W_PCT']
+
+// Store it all in one big ass array cause we have the memory
+const output = []
+
+// Get some some team data
+const teams = JSON.parse(fs.readFileSync('data/teams.json'))
+  .filter(t => !['EST', 'WST'].includes(t.abbr))
+
+// Store data as name, type, all team abbreviations
+const  headers = ["name", "type"].concat(teams.map(t => t.abbr))
+
+// data is mapped to a team id, so create a lookup
+const abbrs = {}
+for (team of teams) {
+  abbrs[team.id] = team.abbr
+}
+
+// Itterete through each stat category
+for(file of files) {
+  const records = csvparse(fs.readFileSync(file.file), { columns: true })
+  const keys = Object.keys(records[0])
+    .filter(k => !ignores.includes(k))
+
+  // Itterate through each stat type in this file
+  for (key of keys) {
+    const stat = { name: key, type: file.name }
+    // Each record represents a team.  Get the stat for that team
+    for (record of records) {
+      stat[abbrs[record.TEAM_ID]] = record[key]
+    }
+    output.push(stat)
+  }
+}
+
+csvwrite(output, { columns: headers, header: true }, (err, output) => {
+  if(err) return process.stderr.write(err)
+  process.stdout.write(output)
+})

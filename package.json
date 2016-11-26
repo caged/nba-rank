@@ -1,0 +1,17 @@
+{
+  "name": "nba-rank",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "python -m http.server 8000",
+    "update": "script/export-data && script/combine-data > data/combined.csv"    
+  },
+  "author": "Justin Palmer",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^1.1.7",
+    "csv-stringify": "^1.0.4"
+  }
+}

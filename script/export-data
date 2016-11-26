@@ -1,0 +1,9 @@
+#!/bin/bash
+
+nba-stats team-general-stats --MeasureType Base --to-csv > data/team-base.csv
+nba-stats team-general-stats --MeasureType Advanced --to-csv > data/team-advanced.csv
+nba-stats team-general-stats --MeasureType "Four Factors" --to-csv > data/team-four-factors.csv
+nba-stats team-general-stats --MeasureType Misc --to-csv > data/team-misc.csv
+nba-stats team-general-stats --MeasureType Scoring --to-csv > data/team-scoring.csv
+nba-stats team-general-stats --MeasureType Opponent --to-csv > data/team-opponent.csv
+nba-stats team-general-stats --MeasureType Defense --to-csv > data/team-defense.csv

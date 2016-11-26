@@ -1,0 +1,607 @@
+[
+  {
+    "id": "1610612737",
+    "abbr": "ATL",
+    "displayAbbr": "ATL",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Southeast",
+    "special": false,
+    "code": "hawks",
+    "city": "Atlanta",
+    "name": "Hawks",
+    "color": "E13A3E",
+    "colors": [
+      "E13A3E",
+      "C4D600",
+      "061922"
+    ],
+    "$$hashKey": 46
+  },
+  {
+    "id": "1610612738",
+    "abbr": "BOS",
+    "displayAbbr": "BOS",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Atlantic",
+    "special": false,
+    "code": "celtics",
+    "city": "Boston",
+    "name": "Celtics",
+    "color": "008348",
+    "colors": [
+      "008348",
+      "061922",
+      "BB9753"
+    ],
+    "$$hashKey": 16
+  },
+  {
+    "id": "1610612751",
+    "abbr": "BKN",
+    "displayAbbr": "BKN",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Atlantic",
+    "special": false,
+    "code": "nets",
+    "city": "Brooklyn",
+    "name": "Nets",
+    "color": "061922",
+    "colors": [
+      "061922",
+      "FFFFFF"
+    ],
+    "$$hashKey": 17
+  },
+  {
+    "id": "1610612766",
+    "abbr": "CHA",
+    "displayAbbr": "CHA",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Southeast",
+    "special": false,
+    "code": "hornets",
+    "city": "Charlotte",
+    "name": "Hornets",
+    "color": "1D1160",
+    "colors": [
+      "1D1160",
+      "008CA8",
+      "A1A1A4"
+    ],
+    "$$hashKey": 47
+  },
+  {
+    "id": "1610612741",
+    "abbr": "CHI",
+    "displayAbbr": "CHI",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Central",
+    "special": false,
+    "code": "bulls",
+    "city": "Chicago",
+    "name": "Bulls",
+    "color": "CE1141",
+    "colors": [
+      "CE1141",
+      "061922"
+    ],
+    "$$hashKey": 31
+  },
+  {
+    "id": "1610612739",
+    "abbr": "CLE",
+    "displayAbbr": "CLE",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Central",
+    "special": false,
+    "code": "cavaliers",
+    "city": "Cleveland",
+    "name": "Cavaliers",
+    "color": "860038",
+    "colors": [
+      "860038",
+      "FDBB30",
+      "002D62"
+    ],
+    "$$hashKey": 32
+  },
+  {
+    "id": "1610612742",
+    "abbr": "DAL",
+    "displayAbbr": "DAL",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Southwest",
+    "special": false,
+    "code": "mavericks",
+    "city": "Dallas",
+    "name": "Mavericks",
+    "color": "061922",
+    "colors": [
+      "061922",
+      "007DC5",
+      "C4CED3",
+      "061922"
+    ],
+    "$$hashKey": 91
+  },
+  {
+    "id": "1610612743",
+    "abbr": "DEN",
+    "displayAbbr": "DEN",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Northwest",
+    "special": false,
+    "code": "nuggets",
+    "city": "Denver",
+    "name": "Nuggets",
+    "color": "4D90CD",
+    "colors": [
+      "4D90CD",
+      "FDB927"
+    ],
+    "$$hashKey": 61
+  },
+  {
+    "id": "1610612765",
+    "abbr": "DET",
+    "displayAbbr": "DET",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Central",
+    "special": false,
+    "code": "pistons",
+    "city": "Detroit",
+    "name": "Pistons",
+    "color": "006BB6",
+    "colors": [
+      "006BB6",
+      "ED174C",
+      "0F586C"
+    ],
+    "$$hashKey": 33
+  },
+  {
+    "id": "1610612744",
+    "abbr": "GSW",
+    "displayAbbr": "GSW",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Pacific",
+    "special": false,
+    "code": "warriors",
+    "city": "Golden State",
+    "name": "Warriors",
+    "color": "FDB927",
+    "colors": [
+      "FDB927",
+      "006BB6"
+    ],
+    "$$hashKey": 76
+  },
+  {
+    "id": "1610612745",
+    "abbr": "HOU",
+    "displayAbbr": "HOU",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Southwest",
+    "special": false,
+    "code": "rockets",
+    "city": "Houston",
+    "name": "Rockets",
+    "color": "CE1141",
+    "colors": [
+      "CE1141",
+      "C4CED3",
+      "061922"
+    ],
+    "$$hashKey": 92
+  },
+  {
+    "id": "1610612754",
+    "abbr": "IND",
+    "displayAbbr": "IND",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Central",
+    "special": false,
+    "code": "pacers",
+    "city": "Indiana",
+    "name": "Pacers",
+    "color": "FFC633",
+    "colors": [
+      "FFC633",
+      "00275D",
+      "BEC0C2"
+    ],
+    "$$hashKey": 34
+  },
+  {
+    "id": "1610612746",
+    "abbr": "LAC",
+    "displayAbbr": "LAC",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Pacific",
+    "special": false,
+    "code": "clippers",
+    "city": "LA",
+    "name": "Clippers",
+    "color": "ED174C",
+    "colors": [
+      "ED174C",
+      "006BB6",
+      "061922"
+    ],
+    "$$hashKey": 77
+  },
+  {
+    "id": "1610612747",
+    "abbr": "LAL",
+    "displayAbbr": "LAL",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Pacific",
+    "special": false,
+    "code": "lakers",
+    "city": "Los Angeles",
+    "name": "Lakers",
+    "color": "FDB927",
+    "colors": [
+      "FDB927",
+      "552582",
+      "061922"
+    ],
+    "$$hashKey": 78
+  },
+  {
+    "id": "1610612763",
+    "abbr": "MEM",
+    "displayAbbr": "MEM",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Southwest",
+    "special": false,
+    "code": "grizzlies",
+    "city": "Memphis",
+    "name": "Grizzlies",
+    "color": "7399C6",
+    "colors": [
+      "7399C6",
+      "BED4E9",
+      "FDB927",
+      "0F586C"
+    ],
+    "$$hashKey": 93
+  },
+  {
+    "id": "1610612748",
+    "abbr": "MIA",
+    "displayAbbr": "MIA",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Southeast",
+    "special": false,
+    "code": "heat",
+    "city": "Miami",
+    "name": "Heat",
+    "color": "98002E",
+    "colors": [
+      "98002E",
+      "F9A01B",
+      "061922"
+    ],
+    "$$hashKey": 48
+  },
+  {
+    "id": "1610612749",
+    "abbr": "MIL",
+    "displayAbbr": "MIL",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Central",
+    "special": false,
+    "code": "bucks",
+    "city": "Milwaukee",
+    "name": "Bucks",
+    "color": "00471B",
+    "colors": [
+      "00471B",
+      "F0EBD2",
+      "061922",
+      "007DC5"
+    ],
+    "$$hashKey": 35
+  },
+  {
+    "id": "1610612750",
+    "abbr": "MIN",
+    "displayAbbr": "MIN",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Northwest",
+    "special": false,
+    "code": "timberwolves",
+    "city": "Minnesota",
+    "name": "Timberwolves",
+    "color": "005083",
+    "colors": [
+      "005083",
+      "00A94F",
+      "C4CED3",
+      "061922"
+    ],
+    "$$hashKey": 62
+  },
+  {
+    "id": "1610612740",
+    "abbr": "NOP",
+    "displayAbbr": "NOP",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Southwest",
+    "special": false,
+    "code": "pelicans",
+    "city": "New Orleans",
+    "name": "Pelicans",
+    "color": "002B5C",
+    "colors": [
+      "002B5C",
+      "E31837",
+      "B4975A"
+    ],
+    "$$hashKey": 94
+  },
+  {
+    "id": "1610612752",
+    "abbr": "NYK",
+    "displayAbbr": "NYK",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Atlantic",
+    "special": false,
+    "code": "knicks",
+    "city": "New York",
+    "name": "Knicks",
+    "color": "006BB6",
+    "colors": [
+      "006BB6",
+      "F58426",
+      "BEC0C2"
+    ],
+    "$$hashKey": 18
+  },
+  {
+    "id": "1610612760",
+    "abbr": "OKC",
+    "displayAbbr": "OKC",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Northwest",
+    "special": false,
+    "code": "thunder",
+    "city": "Oklahoma City",
+    "name": "Thunder",
+    "color": "007DC3",
+    "colors": [
+      "007DC3",
+      "F05133",
+      "FDBB30",
+      "002D62"
+    ],
+    "$$hashKey": 63
+  },
+  {
+    "id": "1610612753",
+    "abbr": "ORL",
+    "displayAbbr": "ORL",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Southeast",
+    "special": false,
+    "code": "magic",
+    "city": "Orlando",
+    "name": "Magic",
+    "color": "007DC5",
+    "colors": [
+      "007DC5",
+      "C4CED3",
+      "061922"
+    ],
+    "$$hashKey": 49
+  },
+  {
+    "id": "1610612755",
+    "abbr": "PHI",
+    "displayAbbr": "PHI",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Atlantic",
+    "special": false,
+    "code": "sixers",
+    "city": "Philadelphia",
+    "name": "Sixers",
+    "color": "ED174C",
+    "colors": [
+      "ED174C",
+      "006BB6",
+      "002B5C"
+    ],
+    "$$hashKey": 19
+  },
+  {
+    "id": "1610612756",
+    "abbr": "PHX",
+    "displayAbbr": "PHX",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Pacific",
+    "special": false,
+    "code": "suns",
+    "city": "Phoenix",
+    "name": "Suns",
+    "color": "E56020",
+    "colors": [
+      "E56020",
+      "1D1160",
+      "63717A",
+      "F9A01B"
+    ],
+    "$$hashKey": 79
+  },
+  {
+    "id": "1610612757",
+    "abbr": "POR",
+    "displayAbbr": "POR",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Northwest",
+    "special": false,
+    "code": "blazers",
+    "city": "Portland",
+    "name": "Trail Blazers",
+    "color": "061922",
+    "colors": [
+      "061922",
+      "E03A3E",
+      "BAC3C9",
+      "061922"
+    ],
+    "$$hashKey": 64
+  },
+  {
+    "id": "1610612758",
+    "abbr": "SAC",
+    "displayAbbr": "SAC",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Pacific",
+    "special": false,
+    "code": "kings",
+    "city": "Sacramento",
+    "name": "Kings",
+    "color": "724C9F",
+    "colors": [
+      "724C9F",
+      "8E9090",
+      "061922"
+    ],
+    "$$hashKey": 80
+  },
+  {
+    "id": "1610612759",
+    "abbr": "SAS",
+    "displayAbbr": "SAS",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Southwest",
+    "special": false,
+    "code": "spurs",
+    "city": "San Antonio",
+    "name": "Spurs",
+    "color": "061922",
+    "colors": [
+      "061922",
+      "BAC3C9"
+    ],
+    "$$hashKey": 95
+  },
+  {
+    "id": "1610612761",
+    "abbr": "TOR",
+    "displayAbbr": "TOR",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Atlantic",
+    "special": false,
+    "code": "raptors",
+    "city": "Toronto",
+    "name": "Raptors",
+    "color": "CE1141",
+    "colors": [
+      "CE1141",
+      "061922",
+      "A1A1A4"
+    ],
+    "$$hashKey": 20
+  },
+  {
+    "id": "1610612762",
+    "abbr": "UTA",
+    "displayAbbr": "UTA",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Northwest",
+    "special": false,
+    "code": "jazz",
+    "city": "Utah",
+    "name": "Jazz",
+    "color": "002B5C",
+    "colors": [
+      "002B5C",
+      "F9A01B",
+      "00471B",
+      "BEC0C2"
+    ],
+    "$$hashKey": 65
+  },
+  {
+    "id": "1610612764",
+    "abbr": "WAS",
+    "displayAbbr": "WAS",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Southeast",
+    "special": false,
+    "code": "wizards",
+    "city": "Washington",
+    "name": "Wizards",
+    "color": "002B5C",
+    "colors": [
+      "002B5C",
+      "E31837",
+      "C4CED4"
+    ],
+    "$$hashKey": 50
+  },
+  {
+    "id": "1610616833",
+    "abbr": "EST",
+    "displayAbbr": "EST",
+    "conference": "Eastern",
+    "displayConference": "Eastern",
+    "division": "Southeast",
+    "special": true,
+    "code": "east",
+    "city": "East",
+    "name": "All-Star East",
+    "color": "00559A",
+    "colors": [
+      "00559A"
+    ]
+  },
+  {
+    "id": "1610616834",
+    "abbr": "WST",
+    "displayAbbr": "WST",
+    "conference": "Western",
+    "displayConference": "Western",
+    "division": "Southwest",
+    "special": true,
+    "code": "est",
+    "city": "West",
+    "name": "All-Star West",
+    "color": "EC003D",
+    "colors": [
+      "EC003D"
+    ]
+  }
+]
