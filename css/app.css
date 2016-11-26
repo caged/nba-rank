@@ -42,6 +42,10 @@ body {
   text-align: right;
 }
 
+.stats tbody td:nth-child(3) {
+  padding: 0;
+}
+
 .stats tbody tr:hover td {
   background: #9AE1FF;
   border-color: #92D9FC;
@@ -75,11 +79,28 @@ body {
 
 .vis {
   display: block;
-  border: 1px solid #eee;
-  margin: 10px;
+}
+
+.vis .title {
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.vis .tick text {
+  font-size: 9px;
 }
 
 .distribution rect {
   fill: green;
   fill-opacity: 0.5;
+}
+
+.distribution rect.POR {
+  fill: red;
+  fill-opacity: 1;
+}
+
+.distribution rect.mean {
+  fill: orange;
+  fill-opacity: 1;
 }
