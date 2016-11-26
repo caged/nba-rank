@@ -15,7 +15,7 @@ const files = [
 ]
 
 // Ignore some junk or duplicate columns
-const ignores = ['TEAM_ID', 'TEAM_NAME', 'CFPARAMS', 'CFID', 'W_RANK', 'L_RANK', 'MIN_RANK', 'GP_RANK', 'W_PCT']
+const ignores = ['TEAM_ID', 'TEAM_NAME', 'CFPARAMS', 'CFID', 'W_RANK', 'L_RANK', 'MIN_RANK', 'GP_RANK']
 
 // Store it all in one big ass array cause we have the memory
 const output = []

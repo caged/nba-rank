@@ -6,7 +6,6 @@ body {
 }
 
 #vis {
-  height: 100vh;
   width: 100vw;
 }
 
@@ -72,4 +71,15 @@ body {
 .stats th.sort-up:after {
   border-bottom: none;
   border-width: 4px 4px 0;
+}
+
+.vis {
+  display: block;
+  border: 1px solid #eee;
+  margin: 10px;
+}
+
+.distribution rect {
+  fill: green;
+  fill-opacity: 0.5;
 }
