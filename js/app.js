@@ -23,7 +23,7 @@ function showStatSpectrum(data, index, stats, el) {
 
 }
 
-function visualizeStat(ranks, stats) {
+function visualizeStat(ranks, stats, el) {
   const statName = ranks.name.replace('_RANK', '')
   const statRow  = stats.find(s => s.name == statName)
   const statVals = d3.entries(statRow).filter(d => !isNaN(d.value))
@@ -31,28 +31,26 @@ function visualizeStat(ranks, stats) {
   const name     = statRow.name
   const type     = statRow.type
 
-  const margin = { top: 20, right: 10, bottom: 20, left: 10 }
+  const margin = { top: 10, right: 10, bottom: 20, left: 10 }
   const width  = 500 - margin.left - margin.right
-  const height = 50 - margin.top - margin.bottom
+  const height = 40 - margin.top - margin.bottom
 
   const extent = d3.extent(statVals, d => d.value)
+  const mean   = d3.mean(statVals, d => d.value)
   const x = d3.scaleLinear()
     .domain(extent)
     .range([0, width])
   const xax = d3.axisBottom()
     .scale(x)
 
-  const svg = d3.select(document.body).append('svg')
+  statVals.push({ key: 'mean', value: mean })
+
+  const svg = d3.select(el).insert('td', ':nth-child(3)').append('svg')
     .attr('class', 'vis ' + name + ' ' + rname)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
   .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-
-  svg.append('text')
-    .attr('y', -10)
-    .attr('class', 'title')
-    .text(name)
 
   svg.append('g')
     .attr('transform', 'translate(0,' + height + ')').call(xax)
@@ -63,7 +61,7 @@ function visualizeStat(ranks, stats) {
   group.selectAll('.team')
     .data(statVals)
   .enter().append('rect')
-    .attr('class', 'team')
+    .attr('class', d => 'team ' + d.key)
     .attr('width', 3)
     .attr('height', height)
     .attr('x', d => x(d.value))
@@ -79,6 +77,8 @@ var q = d3.queue()
     let stats       = allStats.filter(s => s.name.match(/\_rank/i))
     const teams     = d3.nest().key(d => d.abbr).object(results[0])
     const headers   = Object.keys(stats[0])
+
+    headers.splice(2, 0, 'distribution')
 
     // Some stats are duplicates across categories.  Filter them out
     const uniques = []
@@ -108,7 +108,6 @@ var q = d3.queue()
       .data(stats)
     .enter().append('tr')
       .attr('class', d => d.type.toLowerCase())
-      .each((d) => { visualizeStat(d, allStats) })
 
     row.selectAll('td')
       .data(d => d3.entries(d))
@@ -119,5 +118,6 @@ var q = d3.queue()
       .text(d => { return isNaN(d.value) ? d.value.replace('_RANK', '') : d.value })
       .on('click', function(d, i) { showStatSpectrum(d, i, allStats, this) })
 
+    row.each(function(d) { visualizeStat(d, allStats, this) })
     new Tablesort(table.node())
   });
