@@ -58,6 +58,13 @@ function visualizeStat(ranks, stats, el) {
   const group = svg.append('g')
     .attr('class', 'distribution')
 
+  const tip = svg.append('text')
+    .attr('class', 'tip')
+
+  svg.on('mouseout', () => {
+    tip.node().classList.remove('active')
+  })
+
   group.selectAll('.team')
     .data(statVals)
   .enter().append('rect')
@@ -65,6 +72,13 @@ function visualizeStat(ranks, stats, el) {
     .attr('width', 3)
     .attr('height', height)
     .attr('x', d => x(d.value))
+    .on('mouseover', function(d) {
+      const rect = d3.select(this)
+      tip.text(d.key)
+        .attr('x', rect.attr('x'))
+        .node().classList.add('active')
+
+    })
 }
 
 var q = d3.queue()
