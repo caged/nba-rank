@@ -104,3 +104,13 @@ body {
   fill: orange;
   fill-opacity: 1;
 }
+
+.tip {
+  display: none;
+  text-anchor: middle;
+  font-size: 9px;
+}
+
+.tip.active {
+  display: block;
+}
