@@ -47,8 +47,8 @@ body {
 }
 
 .stats tbody tr:hover td {
-  background: #9AE1FF;
-  border-color: #92D9FC;
+  background: hsla(198, 100%, 80%, 0.5);
+  border: 1px solid #92D9FC;
 }
 
 .stats th.sort-header:hover:after {
