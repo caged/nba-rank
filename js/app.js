@@ -1,12 +1,5 @@
-var el = d3.select(".js-vis"),
-    ewidth = parseFloat(el.style("width")),
-    eheight = parseFloat(el.style("height"))
-
-var margin = { top: 20, right: 20, bottom: 20, left: 50 },
-    width = ewidth - margin.left - margin.right,
-    height = eheight - margin.top - margin.bottom
-
-let color = d3.scaleSequential(d3.interpolateYlOrRd)
+const el = d3.select(".js-vis")
+const color = d3.scaleSequential(d3.interpolateYlOrRd)
   .domain([40, 0])
 
 function typeCastNumbersInRow(row) {
