@@ -2,6 +2,24 @@ const el = d3.select(".js-vis")
 const color = d3.scaleSequential(d3.interpolateYlOrRd)
   .domain([40, 0])
 
+/**
+ * Get some url paramaters
+ * @param  {String} name name of search param to getUrlParameter
+ * @return {String}      value of search param
+ */
+function getUrlParameter(name) {
+  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]')
+  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)')
+  var results = regex.exec(location.search)
+  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
+}
+
+/**
+ * Convert things that look like numbers to numbers
+ * via https://davidwalsh.name/query-string-javascript
+ * @param  {Object} row object containing data to parse
+ * @return {Object}     object with numbery things converted
+ */
 function typeCastNumbersInRow(row) {
   var keys = Object.keys(row)
   keys.forEach(function(k) {
@@ -12,10 +30,13 @@ function typeCastNumbersInRow(row) {
   return row
 }
 
-function showStatSpectrum(data, index, stats, el) {
 
-}
-
+/**
+ * Create a distribution visualization for a particular statistic
+ * @param  {Object} ranks object representing data for all 30 teams
+ * @param  {Array} stats [description]
+ * @param  {HTMLElment} el    [description]
+ */
 function visualizeStat(ranks, stats, el) {
   const statName = ranks.name.replace('_RANK', '')
   const statRow  = stats.find(s => s.name == statName)
@@ -36,9 +57,9 @@ function visualizeStat(ranks, stats, el) {
   const xax = d3.axisBottom()
     .scale(x)
 
-  statVals.push({ key: 'mean', value: mean })
+  statVals.push({ key: 'AVG', value: mean })
 
-  const svg = d3.select(el).insert('td', ':nth-child(3)').append('svg')
+  const svg = d3.select(el).append('td').append('svg')
     .attr('class', 'vis ' + name + ' ' + rname)
     .attr('width', width + margin.left + margin.right)
     .attr('height', height + margin.top + margin.bottom)
@@ -83,9 +104,22 @@ var q = d3.queue()
     const allStats  = results[1]
     let stats       = allStats.filter(s => s.name.match(/\_rank/i))
     const teams     = d3.nest().key(d => d.abbr).object(results[0])
-    const headers   = Object.keys(stats[0])
+    let headers   = Object.keys(stats[0])
+    const showTeams = getUrlParameter('teams')
+    headers.push('distribution')
 
-    headers.splice(2, 0, 'distribution')
+    if(showTeams !== "") {
+      headers = ['name', 'type'].concat(showTeams.split(','))
+      headers.push('distribution')
+      for (let row of stats) {
+        const rkeys = Object.keys(row)
+        for (let key of rkeys) {
+          if(!headers.includes(key)) {
+            delete row[key]
+          }
+        }
+      }
+    }
 
     // Some stats are duplicates across categories.  Filter them out
     const uniques = []
@@ -123,7 +157,6 @@ var q = d3.queue()
         if(!['name', 'type'].includes(d.key)) { return color(d.value) }
       })
       .text(d => { return isNaN(d.value) ? d.value.replace('_RANK', '') : d.value })
-      .on('click', function(d, i) { showStatSpectrum(d, i, allStats, this) })
 
     row.each(function(d) { visualizeStat(d, allStats, this) })
     new Tablesort(table.node())

@@ -11,7 +11,6 @@ body {
 
 
 .stats {
-  width: 100%;
   border: 1px solid #eee;
   border-collapse: collapse;
 }
@@ -95,12 +94,7 @@ body {
   fill-opacity: 0.5;
 }
 
-.distribution rect.POR {
-  fill: red;
-  fill-opacity: 1;
-}
-
-.distribution rect.mean {
+.distribution rect.AVG {
   fill: orange;
   fill-opacity: 1;
 }
