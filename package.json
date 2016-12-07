@@ -11,6 +11,6 @@
   "author": "Justin Palmer",
   "dependencies": {
     "csv-parse": "^1.1.7",
-    "csv-stringify": "^1.0.4",
+    "csv-stringify": "^1.0.4"
   }
 }
