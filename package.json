@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "python -m http.server 8000",
+    "server": "python3 -m http.server 8000",
     "update": "script/export-data && script/combine-data > data/combined.csv"
   },
   "author": "Justin Palmer",
