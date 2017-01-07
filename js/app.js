@@ -109,16 +109,19 @@ var q = d3.queue()
     headers.push('distribution')
 
     if(showTeams !== "") {
-      headers = ['name', 'type'].concat(showTeams.split(','))
-      headers.push('distribution')
+      const filteredTeams = showTeams.split(',')
+      headers = ['name', 'type']
+      const relevantKeys = headers.concat(filteredTeams)
       for (let row of stats) {
         const rkeys = Object.keys(row)
         for (let key of rkeys) {
-          if(!headers.includes(key)) {
+          if(!relevantKeys.includes(key)) {
             delete row[key]
           }
         }
       }
+      headers = Object.keys(stats[0])
+      headers.push('distribution')
     }
 
     // Some stats are duplicates across categories.  Filter them out
