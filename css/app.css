@@ -42,7 +42,7 @@ a.twitter {
   background: #f7f7f7;
   cursor: pointer;
   min-width: 40px;
-  user-select: none;  
+  user-select: none;
 }
 
 .stats th:hover {
