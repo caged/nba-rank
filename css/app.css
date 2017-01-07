@@ -58,6 +58,11 @@ a.twitter {
   text-align: right;
 }
 
+.stats tbody td:nth-child(1) a {
+  text-decoration: none;
+  color: #1668bd;
+}
+
 .stats tbody td:nth-child(3) {
   padding: 0;
 }

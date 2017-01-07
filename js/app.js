@@ -156,8 +156,28 @@ var q = d3.queue()
       .style('color', (d) => {
         if(!['name', 'type'].includes(d.key)) { return color(d.value) }
       })
-      .text(d => { return isNaN(d.value) ? d.value.replace('_RANK', '') : d.value })
+      .html((d, i, all) => {
+        if(d.key == 'type') return d.value
+        if(isNaN(d.value)) {
+          let cat = ""
+          const prev = all[i + 1].__data__
+          const val = d.value.replace('_RANK', '')
 
-    row.each(function(d) { visualizeStat(d, allStats, this) })
+          if(prev.key == 'type') {
+            cat = prev.value.toLowerCase().replace(' ', '-')
+          }
+
+          return '<a href="http://stats.nba.com/teams/' +
+            cat + '#!?sort=' +
+            val + '&dir=-1">' +
+            val.replace(/_/g, ' ') + '</a>'
+        }
+
+        return d.value
+      })
+
+    row.each(function(d) {
+      visualizeStat(d, allStats, this)
+    })
     new Tablesort(table.node())
   });
