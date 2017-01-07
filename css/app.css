@@ -9,6 +9,23 @@ body {
   width: 100vw;
 }
 
+.header,
+.footer {
+  padding: 10px;
+  font-size: 12px;
+  color: #999;
+  background: #f7f7f7;
+}
+
+.header a {
+  color: #919191;
+}
+
+a.twitter {
+  float: right;
+  text-decoration: none;
+  color: #17b1f0;
+}
 
 .stats {
   border: 1px solid #eee;
