@@ -20,7 +20,8 @@ const ignores = ['TEAM_ID', 'TEAM_NAME', 'CFPARAMS', 'CFID', 'W_RANK', 'L_RANK',
 // Store it all in one big ass array cause we have the memory
 const output = []
 
-// Get some some team data
+// Get some some team data.  Remove entries for EST and WST since those
+// aren't real teams
 const teams = JSON.parse(fs.readFileSync('data/teams.json'))
   .filter(t => !['EST', 'WST'].includes(t.abbr))
 
