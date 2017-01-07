@@ -164,7 +164,12 @@ var q = d3.queue()
           const val = d.value.replace('_RANK', '')
 
           if(prev.key == 'type') {
-            cat = prev.value.toLowerCase().replace(' ', '-')
+            // Defense category should link to 'Opponent'
+            if(prev.value == 'Defense') {
+              cat = 'opponent'
+            } else {
+              cat = prev.value.toLowerCase().replace(' ', '-')
+            }
           }
 
           return '<a href="http://stats.nba.com/teams/' +
