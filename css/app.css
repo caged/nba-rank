@@ -27,6 +27,11 @@ a.twitter {
   color: #17b1f0;
 }
 
+.sel {
+  width: 100px;
+  color: #333;
+}
+
 .stats {
   border: 1px solid #eee;
   border-collapse: collapse;
