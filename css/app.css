@@ -42,6 +42,7 @@ a.twitter {
   background: #f7f7f7;
   cursor: pointer;
   min-width: 40px;
+  user-select: none;  
 }
 
 .stats th:hover {
@@ -72,11 +73,15 @@ a.twitter {
   border: 1px solid #92D9FC;
 }
 
-.stats th.sort-header:hover:after {
+/*.stats th[role="columnheader"] {
+  background: red !important;
+}*/
+
+.stats th[role="columnheader"]:hover:after {
   visibility: visible;
 }
 
-.stats th.sort-header:after {
+.stats th[role="columnheader"]:after {
   content: '';
   float: right;
   margin-top: 7px;
@@ -86,14 +91,14 @@ a.twitter {
   visibility: hidden;
 }
 
-.stats th.sort-up:after,
-.stats th.sort-down:after,
-.stats th.sort-down:hover:after {
+.stats th[aria-sort="ascending"]:after,
+.stats th[aria-sort="descending"]:after,
+.stats th[aria-sort="descending"]:hover:after {
   visibility: visible;
-  opacity: 0.4;
+  border-color: #7fce4e transparent;
 }
 
-.stats th.sort-up:after {
+.stats th[aria-sort="ascending"]:after {
   border-bottom: none;
   border-width: 4px 4px 0;
 }
