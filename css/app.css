@@ -28,13 +28,16 @@ a.twitter {
 }
 
 .sel {
-  width: 50px;
-  padding: 2px;
-  border: 1px solid #ccc;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid;
+  border-color: #e1e1e1 #eee #eee #e1e1e1;
+  color: #555;
   border-radius: 2px;
 }
 
 .filter {
+  padding: 5px;
   background: #eee;
   border: 1px solid #ccc;
   border-radius: 2px;

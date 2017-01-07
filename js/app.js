@@ -113,19 +113,12 @@ var q = d3.queue()
     const sel = d3.select('.js-sel')
     const btn = d3.select('.js-filter')
 
-    sel.selectAll('option')
-      .data(abbrs)
-    .enter().append('option')
-      .property('selected', (d) => filteredTeams.includes(d))
-      .text(String)
+    sel.attr('value', showTeams)
 
     btn.on('mouseup', function() {
-      const selected = Array.apply(null, sel.node().options)
-        .filter(o => o.selected)
-        .map(o => o.value)
-
+      const selected = sel.node().value
       const loc = document.location
-      document.location = loc.origin + loc.pathname + "?teams=" + selected.join(',')
+      document.location = loc.origin + loc.pathname + "?teams=" + selected
     })
 
     if(showTeams !== "") {
