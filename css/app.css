@@ -28,8 +28,16 @@ a.twitter {
 }
 
 .sel {
-  width: 100px;
-  color: #333;
+  width: 50px;
+  padding: 2px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.filter {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 2px;
 }
 
 .stats {

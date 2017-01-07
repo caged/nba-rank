@@ -106,10 +106,29 @@ var q = d3.queue()
     const teams     = d3.nest().key(d => d.abbr).object(results[0])
     let headers   = Object.keys(stats[0])
     const showTeams = getUrlParameter('teams')
+    const filteredTeams = showTeams.split(',')
     headers.push('distribution')
 
+    const abbrs = results[0].map(t => t.abbr)
+    const sel = d3.select('.js-sel')
+    const btn = d3.select('.js-filter')
+
+    sel.selectAll('option')
+      .data(abbrs)
+    .enter().append('option')
+      .property('selected', (d) => filteredTeams.includes(d))
+      .text(String)
+
+    btn.on('mouseup', function() {
+      const selected = Array.apply(null, sel.node().options)
+        .filter(o => o.selected)
+        .map(o => o.value)
+
+      const loc = document.location
+      document.location = loc.origin + loc.pathname + "?teams=" + selected.join(',')
+    })
+
     if(showTeams !== "") {
-      const filteredTeams = showTeams.split(',')
       headers = ['name', 'type']
       const relevantKeys = headers.concat(filteredTeams)
       for (let row of stats) {
