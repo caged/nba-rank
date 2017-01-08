@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "python3 -m http.server 8000",
+    "preupdate": "env TZ=America/Los_Angeles date",
     "update": "script/export-data && script/combine-data > data/combined.csv"
   },
   "author": "Justin Palmer",
