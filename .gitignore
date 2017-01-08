@@ -1,3 +1,4 @@
 node_modules
 data/team-*
 npm-debug.log
+data/*.csv
